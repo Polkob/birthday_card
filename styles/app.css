@@ -1,0 +1,82 @@
+:root {
+    --main-bg-color: rgb(212, 221, 250);
+    --additional-bg-color: white;
+}
+
+body {
+    font-family: 'Georgia', serif;
+    margin: 0;
+    padding: 0;
+    background-color: var(--main-bg-color);
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 40px;
+}
+
+h1,
+h2 {
+    color: #333;
+    text-align: center;
+}
+
+p {
+    color: #555;
+    line-height: 1.6;
+}
+
+/* Стили для секций */
+.greeting {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.recipient-info {
+    margin-bottom: 40px;
+}
+
+.photo-gallery {
+    margin-bottom: 40px;
+    -webkit-overflow-scrolling: touch;
+}
+
+.gallery {
+    display: inline-flex;
+    overflow-x: auto;
+    justify-content: center;
+    white-space: nowrap;
+    scrollbar-width: none; 
+    -ms-overflow-style: none; 
+}
+
+.gallery::-webkit-scrollbar {
+    display: none;
+}
+
+.gallery img {
+    width: 50%;
+    height: auto;
+    object-fit: cover;
+    margin: 0 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.greeting-letter {
+    margin-bottom: 40px;
+    padding: 20px;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.date-info {
+    margin-bottom: 40px;
+    text-align: center;
+}
+
+.farewell {
+    text-align: right;
+}

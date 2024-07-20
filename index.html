@@ -1,11 +1,64 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Открытка</title>
+
+    <link rel="stylesheet" href="./styles/app.css">
 </head>
+
 <body>
-    
+    <div class="container">
+        <!-- Секция приветствия -->
+        <section class="greeting">
+            <h3>Дорогой</h3>
+            <h4>Я хочу поздравить тебя с этим особенным днем!</h4>
+        </section>
+
+
+        <!-- Секция с фотографиями -->
+        <section class="photo-gallery">
+            <div class="gallery">
+              <div class="gallery-container">
+                <img src="photo.webp" alt="Фото 1">
+                <img src="photo.webp" alt="Фото 2">
+                <img src="photo.webp" alt="Фото 3">
+                <img src="photo.webp" alt="Фото 4">
+                <img src="photo.webp" alt="Фото 5">
+                <img src="photo2.webp" alt="Фото 6">
+                <img src="photo.webp" alt="Фото 1">
+              </div>
+            </div>
+          </section>
+
+        <!-- Секция с информацией о получателе -->
+        <section class="recipient-info">
+            <p>Письмо поздравлние для Владислава Тимошенко</p>
+        </section>
+
+        <!-- Секция с письмом-поздравлением -->
+        <section class="greeting-letter">
+            <h2>Немного хороших слов для тебя</h2>
+            <p>Тут должно быть письмо</p>
+        </section>
+
+        <!-- Секция с датами -->
+        <section class="date-info">
+            <h2>Наша история</h2>
+            <p>Мы познакомились: <span class="date-met">01.01.2022</span></p>
+            <p>Сегодня: <span class="current-date">20.07.2024</span></p>
+            <p>Вместе: <span class="days-together">903 дня</span></p>
+        </section>
+
+        <!-- Секция прощания -->
+        <section class="farewell">
+            <p>С любовью и благодарностью,</p>
+            <p>Твоя лучшая на свете девушка Полина</p>
+        </section>
+    </div>
+    <script src="./scripts/app.js"></script>
 </body>
+
 </html>
