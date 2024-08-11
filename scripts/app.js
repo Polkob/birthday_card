@@ -1,26 +1,46 @@
+(function ($) {
+    $(document).ready(function () {
 
-const gallery = document.querySelector('.gallery');
-  const images = document.querySelectorAll('.gallery img');
+        let carouselSelector = ".owl-carousel";
 
-  let currentIndex = 0;
-  const imageWidth = images[0].offsetWidth;
-  const galleryWidth = gallery.offsetWidth;
+        $(carouselSelector).each(function () {
 
-  function scrollToImage(index) {
-    gallery.scrollLeft = index * imageWidth;
-  }
+            let owl = $(this);
 
-  gallery.addEventListener('scroll', () => {
-    currentIndex = Math.floor(gallery.scrollLeft / imageWidth);
+            owl.owlCarousel({
+                items: 2,
+                margin: 20,
+                mouseDrag: true,
+                touchDrag: true,
+                touchSwipe: true,
+                loop: true,
+                autoPlay: true,
+                autoPlayTimeout: 1000,
+                fluidSpeed: true,
+                autoPlaySpeed: 1000, 
+                smartSpeed: 1000,
+            });
 
-    if (currentIndex === images.length - 2) {
-      // Если прокрутили до предпоследней фотографии, плавно перемещаемся к первой
-      scrollToImage(0);
-    } else if (currentIndex === images.length - 1) {
-      // Если прокрутили до последней фотографии, плавно перемещаемся к третьей
-      scrollToImage(2);
-    }
-  });
+            owl.trigger('play.owl.autoplay', [1500]);
 
-  // Плавно прокручиваем к первой фотографии при загрузке страницы
-  scrollToImage(0);
+            function getDaysDifference(date1, date2) {
+                const oneDay = 24 * 60 * 60 * 1000;
+                const diffDays = Math.round(Math.abs((date1 - date2) / oneDay));
+                return diffDays;
+            }
+
+            function updateDateInfo() {
+                const metDate = new Date('2022-06-20');
+                const currentDate = new Date();
+                const daysTogether = getDaysDifference(currentDate, metDate);
+
+                $('.date-met').text(metDate.toLocaleDateString());
+                $('.current-date').text(currentDate.toLocaleDateString());
+                $('.days-together').text(`${daysTogether} дня`);
+            }
+
+            setInterval(updateDateInfo, 1000);
+        });
+
+    });
+})(jQuery);

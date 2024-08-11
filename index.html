@@ -6,50 +6,57 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Открытка</title>
 
-    <link rel="stylesheet" href="./styles/app.css">
+    <link rel="stylesheet" href="styles/app.css" />
+    <link rel="stylesheet" href="owlcarousel/owl.carousel.min.css" />
+    <link rel="stylesheet" href="owlcarousel/owl.theme.default.min.css" />
+    <script defer src="scripts/jquery-3.7.1.min.js"></script>
+    <script defer src="owlcarousel/owl.carousel.min.js"></script>
+    <script defer src="scripts/app.js"></script>
+
 </head>
 
 <body>
     <div class="container">
         <!-- Секция приветствия -->
         <section class="greeting">
-            <h3>Дорогой</h3>
-            <h4>Я хочу поздравить тебя с этим особенным днем!</h4>
+            <h3>Дорогой, Влад!</h3>
+            <h4>Я хочу поздравить тебя с этим особенным для тебя днем!</h4>
         </section>
 
 
         <!-- Секция с фотографиями -->
         <section class="photo-gallery">
-            <div class="gallery">
-              <div class="gallery-container">
-                <img src="photo.webp" alt="Фото 1">
-                <img src="photo.webp" alt="Фото 2">
-                <img src="photo.webp" alt="Фото 3">
-                <img src="photo.webp" alt="Фото 4">
-                <img src="photo.webp" alt="Фото 5">
-                <img src="photo2.webp" alt="Фото 6">
-                <img src="photo.webp" alt="Фото 1">
-              </div>
-            </div>
-          </section>
-
-        <!-- Секция с информацией о получателе -->
-        <section class="recipient-info">
-            <p>Письмо поздравлние для Владислава Тимошенко</p>
+            <p class="p-gallery">Наши моменты<p>
+                <div id="slideshow">
+                    <div class="content">
+                        <div class="slider owl-carousel">
+                            <img src="./galerry/photo1.jpg" alt="Слайд 1" />
+                            <img src="./galerry/photo2.jpg" alt="Слайд 2" />
+                            <img src="./galerry/photo3.jpg" alt="Слайд 3" />
+                            <img src="./galerry/photo4.jpg" alt="Слайд 4" />
+                            <img src="./galerry/photo5.jpg" alt="Слайд 5" />
+                            <img src="./galerry/photo6.jpg" alt="Слайд 6" />
+                            <img src="./galerry/photo7.jpg" alt="Слайд 7" />
+                            <img src="./galerry/photo8.jpg" alt="Слайд 8" />
+                            <img src="./galerry/photo9.jpg" alt="Слайд 9" />
+                            <img src="./galerry/photo10.jpg" alt="Слайд 10" />
+                        </div>
+                    </div>
+                </div>
         </section>
 
         <!-- Секция с письмом-поздравлением -->
         <section class="greeting-letter">
-            <h2>Немного хороших слов для тебя</h2>
+            <h3>Немного хороших слов для тебя</h3>
             <p>Тут должно быть письмо</p>
         </section>
 
         <!-- Секция с датами -->
         <section class="date-info">
-            <h2>Наша история</h2>
-            <p>Мы познакомились: <span class="date-met">01.01.2022</span></p>
-            <p>Сегодня: <span class="current-date">20.07.2024</span></p>
-            <p>Вместе: <span class="days-together">903 дня</span></p>
+            <h3>Наша история</h3>
+            <p>Мы стали парой <span class="date-met">01.01.2022</span></p>
+            <p>Сегодня <span class="current-date"></span></p>
+            <p>С тобой вместе мы <span class="days-together"></span></p>
         </section>
 
         <!-- Секция прощания -->
@@ -58,7 +65,7 @@
             <p>Твоя лучшая на свете девушка Полина</p>
         </section>
     </div>
-    <script src="./scripts/app.js"></script>
+
 </body>
 
 </html>
