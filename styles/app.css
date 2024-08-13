@@ -1,11 +1,14 @@
 :root {
     --main-bg-color: rgba(214, 226, 253, 0.568);
-    --additional-bg-color: rgba(229, 240, 255, 0.495);
-
+    --additional-bg-color:rgba(255, 255, 255, 0.85);
+    --accent-color: #110b37b5;
+    --text-color: #555;
+    --shadow-color: rgba(0, 0, 0, 0.3);
 }
 
 body {
-    font-family: 'Georgia', serif;
+    /* font-family: 'Georgia', serif; */
+    font-family: monospace;
     margin: 0;
     padding: 0;
     background-color: var(--main-bg-color);
@@ -19,94 +22,191 @@ body::-webkit-scrollbar {
     max-width: 900px;
     margin: 0 auto;
     padding: 40px;
-    background-color: #3b393946;
+    border-radius: 12px;
+    box-shadow: 0 5px 20px var(--shadow-color);
+    background-image: url("https://furman.top/uploads/posts/2022-11/1667332025_40-furman-top-p-fon-dlya-storis-serdechki-krasivo-40.jpg");
+    background-size: cover;
+    background-position: center;
+    /* background-repeat: no-repeat; */
 }
 
 h3 {
-    color: #555;
+    color: var(--accent-color);
     text-align: center;
-    text-shadow: 0 2px 2px #3333332f;
+    text-shadow: 0 2px 2px rgba(51, 51, 51, 0.18);
 }
 
-h4{
-    color: #110b37b5;
+h4 {
+    color: var(--accent-color);
 }
+
 p {
-    color: #555;
+    color: var(--text-color);
     line-height: 1.6;
 }
 
 /* Стили для секций */
 .greeting {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     text-align: center;
-    margin-bottom: 40px;
-    padding: 2px 2px ;
-    border-radius: 8px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+    justify-content: center;
     background-color: var(--additional-bg-color);
+    border-radius: 16px;
+    /* box-shadow: 0 4px 14px var(--shadow-color); */
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.129);
+    /* inset 0 0 30px rgba(140, 169, 197, 0.438); */
+    padding: 10px;
+    margin-bottom: 20px;
 }
 
+.greeting h3 {
+    font-size: 1.5rem;
+    /* font-weight: 500; */
+    margin-bottom: 5px;
+    color: var(--accent-color);
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
 
 .photo-gallery {
-    padding: 0 19px;
-    margin: 20px 0 40px;
+    margin: 40px 0;
+    padding: 0 20px;
+
 }
 
-.p-gallery{
-    color: rgba(0, 0, 0, 0.555);
+.photo-gallery .p-gallery {
+    width: 50%;
+    background-color: var(--additional-bg-color);
+    margin-left: 25%;
+    font-size: 0.9rem;
+    font-weight: 600;
     text-align: center;
-    border-radius: 10px 10px 0 0;
-    text-shadow: 0 1px 5px rgba(46, 46, 76, 0.26);
-    background-color: rgba(255, 255, 255, 0.413);
-    box-shadow: 0 10px 10px rgba(96, 96, 96, 0.413);
-
+    margin-bottom: 20px;
+    color: var(--accent-color);
+    border-radius: 5px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.194);
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    @media screen and (max-width: 450px){
+        margin-left: 0;
+        width: 100%;
+        padding: 4px;
+        font-size: 0.7rem;
+    }
 }
 
 .owl-carousel {
-    display: grid; 
-    overflow-x: auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    grid-gap: 10px;
     justify-content: center;
-    white-space: nowrap;
-    scrollbar-width: none;
-    -ms-overflow-style: none;
-}
-
-.owl-carousel::-webkit-scrollbar {
-    display: none;
 }
 
 .owl-carousel img {
-    width: 30%;
-    height: auto;
+    width: 100%;
+    height: 300px;
     object-fit: cover;
-    border-radius: 0 0 20px 20px;
-    border: #333;
+    border-radius: 12px;
+    box-shadow: 0 3px 5px rgba(0, 0, 0, 0.15);
+    transition: transform 0.3s ease-in-out;
+    @media screen and (max-width: 450px){
+        height: max(200px);
+    }
+}
+
+.owl-carousel img:hover {
+    transform: scale(0.95);
 }
 
 .greeting-letter {
     margin-bottom: 40px;
     padding: 20px;
-    background-color: rgba(255, 255, 255, 0.691);
-    border-radius: 8px;
-    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.304);
+    background-color: var(--additional-bg-color);
+    border-radius: 12px;
+    box-shadow: 0 5px 10px var(--shadow-color);
 }
+
+/* .letter-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+    line-height: 1.5;
+  } */
+
+  .letter-content {
+    font-family:monospace;
+    background-color: #f5f5f5;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  }
+
 
 .date-info {
-    width: 50%;
-    margin-bottom: 40px;
-    margin-left: 25%;
-    text-align: center;
-    padding: 5px;
-    background-color: rgba(255, 255, 255, 0.319);
-    border-radius: 8px;
-    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.304);
+    width: 100%;
+    max-width: 700px;
+    margin: 60px auto;
+    background-color: var(--additional-bg-color);
+    border-radius: 20px;
+    box-shadow: 0 5px 20px var(--shadow-color);
+    /* padding: 10px; */
+    @media screen and (max-width: 450px){
+        max-width: 200px;
+        padding: 5px; 
+    }
 }
 
-.date-info p{
+.date-info-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
 
-    color: #3b3939;
+.date-info h2 {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: var(--accent-color);
+    margin-bottom: 30px;
+    @media screen and (max-width: 450px){
+        font-size: 1.0rem;
+    }
+}
+
+.date-details {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.date-details > div {
+    flex: 1;
+    text-align: center;
+}
+
+.date-details h3 {
+    font-size: 1.4rem;
+    font-weight: 500;
+    color: var(--accent-color);
+    margin-bottom: 10px;
+    @media screen and (max-width: 450px){
+        font-size: 0.8rem;
+    }
+}
+
+.date-details p {
+    font-size: 1.2rem;
+    font-weight: 400;
+    color: var(--text-color);
+    @media screen and (max-width: 450px){
+        font-size: 0.6rem;
+    }
 }
 
 .farewell {
     text-align: right;
+    @media screen and (max-width: 450px){
+        font-size: 0.5rem;
+    }
 }

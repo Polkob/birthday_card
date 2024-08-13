@@ -34,12 +34,19 @@
                 const currentDate = new Date();
                 const daysTogether = getDaysDifference(currentDate, metDate);
 
-                $('.date-met').text(metDate.toLocaleDateString());
-                $('.current-date').text(currentDate.toLocaleDateString());
-                $('.days-together').text(`${daysTogether} дня`);
+                $('.date-met-text').text(metDate.toLocaleDateString());
+                $('.current-date-text').text(currentDate.toLocaleDateString());
+                $('.days-together-text').text(`${daysTogether} дня`);
             }
 
             setInterval(updateDateInfo, 1000);
+        });
+
+        $.get('../letter.txt', function(data) {
+            $('#letter-content').text(data);
+        })
+        .fail(function(error) {
+            console.error('Ошибка при чтении файла:', error);
         });
 
     });
